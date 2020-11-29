@@ -3,8 +3,8 @@ package com.example.oauth.user.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.oauth.user.repositories.UserRepository;
 import com.example.oauth.user.models.UserEntity;
+import com.example.oauth.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
 package com.example.oauth.guest.services;
 
-import com.example.oauth.guest.repositories.GuestRepository;
 import com.example.oauth.guest.models.Guest;
 import com.example.oauth.guest.models.GuestData;
+import com.example.oauth.guest.repositories.GuestRepository;
 import com.example.oauth.user.models.UserEntity;
 import com.example.oauth.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
