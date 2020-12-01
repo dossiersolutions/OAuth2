@@ -1,7 +1,6 @@
 package com.example.oauth.guest.controllers;
 
 import com.example.oauth.guest.models.Guest;
-import com.example.oauth.guest.models.GuestData;
 import com.example.oauth.guest.services.GuestService;
 import com.example.oauth.user.models.UserEntity;
 import com.example.oauth.user.services.UserEntityService;
@@ -22,14 +21,9 @@ public class GuestController {
     @Autowired
     private UserEntityService userService;
 
-    @RequestMapping("/guests")
-    public List<Guest> getAllGuests(){
-        return guestService.getAllGuests();
-    }
-
     @RequestMapping("/guests/{userId}")
-    public GuestData getAllGuestsById(@PathVariable int userId){
-        return guestService.getAllGuestsById(userId, "jovan.milutinovic@boutsourcing.com");
+    public List<Guest> getAllGuestsById(@PathVariable int userId){
+        return guestService.getAllGuestsById(userId);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/guests/{userId}")

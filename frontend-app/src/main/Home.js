@@ -91,7 +91,7 @@ class Home extends Component {
     if (authToken === "error") {
       formJsx.push(
           <div key={"errorMsg"} className="page-header" style={this.col_md_12}>
-            <small>Wronf credentials (email / password)!</small>
+            <small>Wrong credentials (email / password)!</small>
           </div>
       )
     } else if (authToken && userDetails) {

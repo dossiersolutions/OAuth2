@@ -195,14 +195,14 @@ class AddGuest extends Component {
         let selectedConfirmed = null;
 
         if (confirmed === "" || !confirmed) {
-            selectedConfirmed = "Potvrdio..."
+            selectedConfirmed = "Confirmed..."
         } else {
             selectedConfirmed = confirmed;
         }
 
         return (
             <div style={this.commonMargin}>
-                <Label>Potvrdio</Label>
+                <Label>Confirmed</Label>
                 <DropdownButton variant={"secondary"} id="dropdown-basic-button" title={selectedConfirmed}>
                     <Dropdown.Item style={this.dropDownItem}
                                    onClick={() => this.activitySelectConfirmed("true")}>true</Dropdown.Item>

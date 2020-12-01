@@ -550,20 +550,12 @@ class MainContent extends Component {
 }
 
 const mapStateToProps = state => {
-    const guests = state.datareducer.getIn([POPULATE_KEY_FETCH_GUESTS, "guestData"]);
-    const totalCount = state.datareducer.getIn([POPULATE_KEY_FETCH_GUESTS, "allGuests"]);
-    const jovanCount = state.datareducer.getIn([POPULATE_KEY_FETCH_GUESTS, "jovanGuests"]);
-    const danicaCount = state.datareducer.getIn([POPULATE_KEY_FETCH_GUESTS, "danicaGuests"]);
-    const confirmedCount = state.datareducer.getIn([POPULATE_KEY_FETCH_GUESTS, "confirmedGuests"]);
+    const guests = state.datareducer.get(POPULATE_KEY_FETCH_GUESTS);
     const guestUpdate = state.datareducer.get(POPULATE_KEY_UPDATE_GUEST);
 
     return {
         guests,
         guestUpdate,
-        totalCount,
-        danicaCount,
-        jovanCount,
-        confirmedCount
     };
 };
 
