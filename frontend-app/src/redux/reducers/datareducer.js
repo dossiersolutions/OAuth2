@@ -43,11 +43,11 @@ const datareducer = (im_state = new Map(), action = {}) => {
 
     case TYPE_DELETE_GUEST: {
       const guestId = fromJS(action.id);
-      const usersList = im_state.getIn([POPULATE_KEY_FETCH_GUESTS, "guestData"]);
+      const usersList = im_state.get(POPULATE_KEY_FETCH_GUESTS);
 
       usersList && usersList.forEach((guest, index) => {
         if (guest.get("id") === guestId) {
-          im_state = im_state.deleteIn([POPULATE_KEY_FETCH_GUESTS, "guestData", index])
+          im_state = im_state.deleteIn([POPULATE_KEY_FETCH_GUESTS, index])
         }
       });
       return im_state;
