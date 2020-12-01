@@ -515,13 +515,6 @@ class MainContent extends Component {
     }
 
     generateButtonPanel() {
-        const {
-            totalCount,
-            jovanCount,
-            danicaCount,
-            confirmedCount,
-        } = this.props;
-
         const userEmail = "(" + decrypt(window.sessionStorage.getItem("userEmail")) + ")";
 
         return (

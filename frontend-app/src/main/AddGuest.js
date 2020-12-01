@@ -52,7 +52,6 @@ class AddGuest extends Component {
 
     componentDidMount() {
         const authToken = decrypt(window.sessionStorage.getItem("token"));
-        const userId = decrypt(window.sessionStorage.getItem("userId"));
 
         if (!authToken) {
             this.logoutUser();
@@ -77,10 +76,6 @@ class AddGuest extends Component {
         const {
             updateResources
         } = this.props;
-
-        const result = {
-            data: ""
-        };
 
         updateResources(null, POPULATE_KEY_ADD_GUEST, TYPE_ADD_GUEST);
     }
