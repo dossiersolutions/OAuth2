@@ -17,7 +17,7 @@ class GuestController {
     private val userService: UserEntityService? = null
 
     @RequestMapping("/guests/{userId}")
-    fun getAllGuestsById(@PathVariable userId: Int): List<Guest>? {
+    fun getAllGuestsById(@PathVariable userId: Int): List<Guest?>? {
         return guestService!!.getAllGuestsById(userId)
     }
 
@@ -33,13 +33,13 @@ class GuestController {
     @RequestMapping(method = [RequestMethod.PUT], value = ["/guests/{id}"])
     fun updateGuest(@RequestBody guest: Guest, @PathVariable id: Int): Guest? {
         val oldGuest = guestService!!.getSingleGuestById(id);
-        oldGuest.firstName = guest.firstName;
-        oldGuest.lastName = guest.lastName;
-        oldGuest.description = guest.description;
-        oldGuest.invited = guest.invited;
-        oldGuest.confirmed = guest.confirmed;
-        oldGuest.tableNo = guest.tableNo;
-        return guestService.updateGuest(oldGuest);
+        oldGuest?.firstName = guest.firstName;
+        oldGuest?.lastName = guest.lastName;
+        oldGuest?.description = guest.description;
+        oldGuest?.invited = guest.invited;
+        oldGuest?.confirmed = guest.confirmed;
+        oldGuest?.tableNo = guest.tableNo;
+        return guestService.updateGuest(oldGuest!!);
     }
 
     @RequestMapping(method = [RequestMethod.DELETE], value = ["/guests/{id}"])
