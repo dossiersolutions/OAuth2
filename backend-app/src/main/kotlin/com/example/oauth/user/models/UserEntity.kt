@@ -15,14 +15,8 @@ class UserEntity {
 
     @ElementCollection
     @Column(name="role")
+    @JvmSuppressWildcards
     var grantedAuthoritiesList: Collection<GrantedAuthority> = ArrayList<GrantedAuthority>();
-
-    constructor(id: Int, name: String, email: String, password: String){
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
 
     constructor(id: Int, email: String, name: String){
         this.id = id;
